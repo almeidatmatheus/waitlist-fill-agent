@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 720" width="860" height="720" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-label="System architecture of waitlist-fill-agent">
+<title>System architecture of waitlist-fill-agent</title>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a8984"/></marker></defs>
+<rect width="100%" height="100%" fill="#fcfcfb"/>
+<rect x="20" y="20" width="540" height="560" rx="12" fill="#edf4fd" stroke="#2a78d6" stroke-width="1.5"/>
+<text x="34" y="42" font-size="12.5" font-weight="600" fill="#2a78d6">waitlist-fill-agent  (Node.js, TypeScript, Fastify)</text>
+<text x="38" y="64" font-size="10.5" font-weight="600" fill="#52514e" text-anchor="start">TRIGGERS</text>
+<rect x="38" y="74" width="116" height="64" rx="8" fill="#ffffff" stroke="#d6d5d0" stroke-width="1.2"/>
+<text x="96" y="95.5" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">Detector</text>
+<text x="96" y="112.5" font-size="11.5" fill="#52514e" text-anchor="middle">lists the calendar:</text>
+<text x="96" y="127.5" font-size="11.5" fill="#52514e" text-anchor="middle">notice or timer</text>
+<rect x="164" y="74" width="116" height="64" rx="8" fill="#ffffff" stroke="#d6d5d0" stroke-width="1.2"/>
+<text x="222" y="95.5" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">Sweeper</text>
+<text x="222" y="112.5" font-size="11.5" fill="#52514e" text-anchor="middle">expiry, retries,</text>
+<text x="222" y="127.5" font-size="11.5" fill="#52514e" text-anchor="middle">reconciliation</text>
+<rect x="300" y="74" width="242" height="64" rx="8" fill="#ffffff" stroke="#d6d5d0" stroke-width="1.2"/>
+<text x="421" y="103" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">Inbound webhook</text>
+<text x="421" y="120" font-size="11.5" fill="#52514e" text-anchor="middle">HMAC check, dedup, routing</text>
+<rect x="38" y="214" width="242" height="92" rx="8" fill="#ffffff" stroke="#d6d5d0" stroke-width="1.2"/>
+<text x="159" y="249.5" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">Recovery workflow</text>
+<text x="159" y="266.5" font-size="11.5" fill="#52514e" text-anchor="middle">LangGraph, one thread per freed slot:</text>
+<text x="159" y="281.5" font-size="11.5" fill="#52514e" text-anchor="middle">find patient → offer → book</text>
+<rect x="300" y="214" width="242" height="92" rx="8" fill="#ffffff" stroke="#d6d5d0" stroke-width="1.2"/>
+<text x="421" y="249.5" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">Patient assistant</text>
+<text x="421" y="266.5" font-size="11.5" fill="#52514e" text-anchor="middle">LangGraph function-calling agent:</text>
+<text x="421" y="281.5" font-size="11.5" fill="#52514e" text-anchor="middle">cancel, reschedule, questions</text>
+<path d="M96,138 L96,214" fill="none" stroke="#8a8984" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="73.7" y="167" width="44.599999999999994" height="16" rx="3" fill="#fcfcfb" opacity="0.92"/>
+<text x="96" y="179" font-size="11" font-weight="400" fill="#52514e" text-anchor="middle">starts</text>
+<path d="M222,138 L222,214" fill="none" stroke="#8a8984" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="196.65" y="167" width="50.699999999999996" height="16" rx="3" fill="#fcfcfb" opacity="0.92"/>
+<text x="222" y="179" font-size="11" font-weight="400" fill="#52514e" text-anchor="middle">resumes</text>
+<path d="M470,138 L470,214" fill="none" stroke="#8a8984" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="426.35" y="167" width="87.3" height="16" rx="3" fill="#fcfcfb" opacity="0.92"/>
+<text x="470" y="179" font-size="11" font-weight="400" fill="#52514e" text-anchor="middle">anything else</text>
+<path d="M340,138 L340,162 L268,162 L268,214" fill="none" stroke="#8a8984" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="348" y="166" font-size="11" font-weight="400" fill="#52514e" text-anchor="start">reply to an offer</text>
+<text x="38" y="332" font-size="10.5" font-weight="600" fill="#52514e" text-anchor="start">DECISIONS AND RULES</text>
+<rect x="32" y="340" width="516" height="222" rx="10" fill="none" stroke="#cfcec8" stroke-dasharray="4 4"/>
+<path d="M250,306 L250,340" fill="none" stroke="#8a8984" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M421,306 L421,340" fill="none" stroke="#8a8984" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="38" y="352" width="242" height="198" rx="8" fill="#ffffff" stroke="#d6d5d0" stroke-width="1.2"/>
+<text x="159" y="418" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">Deterministic core</text>
+<text x="159" y="435" font-size="11.5" fill="#52514e" text-anchor="middle">eligibility and priority</text>
+<text x="159" y="450" font-size="11.5" fill="#52514e" text-anchor="middle">availability (live calendar)</text>
+<text x="159" y="465" font-size="11.5" fill="#52514e" text-anchor="middle">booking state machine</text>
+<text x="159" y="480" font-size="11.5" fill="#52514e" text-anchor="middle">confirmation gate</text>
+<text x="159" y="495" font-size="11.5" fill="#52514e" text-anchor="middle">guardrails, human handoff</text>
+<rect x="300" y="352" width="242" height="62" rx="8" fill="#ffffff" stroke="#d6d5d0" stroke-width="1.2"/>
+<text x="421" y="380" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">Language decisions</text>
+<text x="421" y="397" font-size="11.5" fill="#52514e" text-anchor="middle">what does the patient mean? a clear yes?</text>
+<rect x="300" y="424" width="242" height="56" rx="8" fill="#ffffff" stroke="#d6d5d0" stroke-width="1.2"/>
+<text x="421" y="449" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">LLM</text>
+<text x="421" y="466" font-size="11.5" fill="#52514e" text-anchor="middle">agent reasoning and replies; Jev fallback</text>
+<rect x="300" y="494" width="242" height="56" rx="8" fill="#e9f7f1" stroke="#1baf7a" stroke-width="1.2"/>
+<text x="421" y="519" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">Jev</text>
+<text x="421" y="536" font-size="11.5" fill="#52514e" text-anchor="middle">fast typed decisions with confidence</text>
+<rect x="640" y="60" width="200" height="56" rx="8" fill="#faf6ee" stroke="#d8cdb6" stroke-width="1.2"/>
+<text x="740" y="85" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">Patient</text>
+<text x="740" y="102" font-size="11.5" fill="#52514e" text-anchor="middle">WhatsApp on a phone</text>
+<rect x="640" y="160" width="200" height="80" rx="8" fill="#faf6ee" stroke="#d8cdb6" stroke-width="1.2"/>
+<text x="740" y="189.5" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">WA-AKG gateway</text>
+<text x="740" y="206.5" font-size="11.5" fill="#52514e" text-anchor="middle">WhatsApp REST API</text>
+<text x="740" y="221.5" font-size="11.5" fill="#52514e" text-anchor="middle">+ signed webhooks</text>
+<path d="M740,116 L740,160" fill="none" stroke="#8a8984" stroke-width="1.4" marker-end="url(#ah)" marker-start="url(#ah)"/>
+<path d="M640,180 L600,180 L600,106 L542,106" fill="none" stroke="#8a8984" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="574.65" y="135" width="50.699999999999996" height="16" rx="3" fill="#fcfcfb" opacity="0.92"/>
+<text x="600" y="147" font-size="11" font-weight="400" fill="#52514e" text-anchor="middle">webhook</text>
+<path d="M542,226 L640,226" fill="none" stroke="#8a8984" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="574.8" y="209" width="32.4" height="16" rx="3" fill="#fcfcfb" opacity="0.92"/>
+<text x="591" y="221" font-size="11" font-weight="400" fill="#52514e" text-anchor="middle">send</text>
+<rect x="640" y="424" width="200" height="56" rx="8" fill="#faf6ee" stroke="#d8cdb6" stroke-width="1.2"/>
+<text x="740" y="449" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">OpenAI API</text>
+<text x="740" y="466" font-size="11.5" fill="#52514e" text-anchor="middle">OPENAI_MODEL</text>
+<rect x="640" y="494" width="200" height="56" rx="8" fill="#faf6ee" stroke="#d8cdb6" stroke-width="1.2"/>
+<text x="740" y="519" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">TypeSafe Jev API</text>
+<text x="740" y="536" font-size="11.5" fill="#52514e" text-anchor="middle">System One</text>
+<path d="M542,452 L640,452" fill="none" stroke="#8a8984" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M542,522 L640,522" fill="none" stroke="#8a8984" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="38" y="630" width="242" height="64" rx="8" fill="#faf6ee" stroke="#d8cdb6" stroke-width="1.2"/>
+<text x="159" y="659" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">Outlook calendar</text>
+<text x="159" y="676" font-size="11.5" fill="#52514e" text-anchor="middle">via outlook-calendar-lite-mcp (ls, cr, ed, ntf)</text>
+<rect x="300" y="630" width="242" height="64" rx="8" fill="#faf6ee" stroke="#d8cdb6" stroke-width="1.2"/>
+<text x="421" y="659" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">PostgreSQL</text>
+<text x="421" y="676" font-size="11.5" fill="#52514e" text-anchor="middle">business data + LangGraph checkpoints</text>
+<path d="M159,550 L159,630" fill="none" stroke="#8a8984" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="169.85" y="597" width="26.299999999999997" height="16" rx="3" fill="#fcfcfb" opacity="0.92"/>
+<text x="183" y="609" font-size="11" font-weight="400" fill="#52514e" text-anchor="middle">MCP</text>
+<path d="M421,580 L421,630" fill="none" stroke="#8a8984" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="425.55" y="597" width="62.9" height="16" rx="3" fill="#fcfcfb" opacity="0.92"/>
+<text x="457" y="609" font-size="11" font-weight="400" fill="#52514e" text-anchor="middle">all state</text>
+<path d="M58,630 L58,598 L27,598 L27,106 L38,106" fill="none" stroke="#8a8984" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="60.35" y="601" width="87.3" height="16" rx="3" fill="#fcfcfb" opacity="0.92"/>
+<text x="104" y="613" font-size="11" font-weight="400" fill="#52514e" text-anchor="middle">change notice</text>
+</svg>

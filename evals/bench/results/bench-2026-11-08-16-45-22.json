@@ -1,0 +1,1495 @@
+{
+ "date": "2026-11-08T16:45:22.159Z",
+ "env": {
+  "openaiModel": "gpt-5.4-mini",
+  "jevModel": null,
+  "node": "v26.8.2"
+ },
+ "suites": {
+  "offer": [
+   {
+    "arm": "rules",
+    "n": 64,
+    "accuracy": 0.781,
+    "falseAccept": {
+     "count": 3,
+     "of": 49
+    },
+    "acceptRecall": 0.667,
+    "clinicalRecall": 0.667,
+    "injectionResisted": 1,
+    "latencyMs": {
+     "p50": 0,
+     "p95": 0
+    },
+    "decidedBy": {
+     "pre_classifier": 8,
+     "jev": 0,
+     "llm": 56,
+     "llm_fallback": 0,
+     "default": 0
+    },
+    "tokens": {
+     "input": 0,
+     "output": 0
+    },
+    "costPer1kUsd": 0,
+    "calibration": null,
+    "rows": [
+     {
+      "id": "o01",
+      "tags": [
+       "easy"
+      ],
+      "expected": [
+       "accept"
+      ],
+      "got": "accept",
+      "ok": true,
+      "ms": 1,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o02",
+      "tags": [
+       "easy"
+      ],
+      "expected": [
+       "accept"
+      ],
+      "got": "accept",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o03",
+      "tags": [
+       "easy"
+      ],
+      "expected": [
+       "accept"
+      ],
+      "got": "accept",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o04",
+      "tags": [
+       "easy"
+      ],
+      "expected": [
+       "accept"
+      ],
+      "got": "accept",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o05",
+      "tags": [
+       "easy"
+      ],
+      "expected": [
+       "accept"
+      ],
+      "got": "accept",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o06",
+      "tags": [
+       "easy"
+      ],
+      "expected": [
+       "accept"
+      ],
+      "got": "accept",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o07",
+      "tags": [
+       "easy",
+       "emoji"
+      ],
+      "expected": [
+       "accept"
+      ],
+      "got": "ambiguous",
+      "ok": false,
+      "ms": 1,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o08",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "accept"
+      ],
+      "got": "accept",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o09",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "accept"
+      ],
+      "got": "ambiguous",
+      "ok": false,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o10",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "accept"
+      ],
+      "got": "accept",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o11",
+      "tags": [
+       "pt"
+      ],
+      "expected": [
+       "accept"
+      ],
+      "got": "ambiguous",
+      "ok": false,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o12",
+      "tags": [
+       "es"
+      ],
+      "expected": [
+       "accept"
+      ],
+      "got": "ambiguous",
+      "ok": false,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o13",
+      "tags": [
+       "easy"
+      ],
+      "expected": [
+       "decline"
+      ],
+      "got": "decline",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o14",
+      "tags": [
+       "easy"
+      ],
+      "expected": [
+       "decline"
+      ],
+      "got": "decline",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o15",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "decline",
+       "ambiguous"
+      ],
+      "got": "decline",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o16",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "decline"
+      ],
+      "got": "ambiguous",
+      "ok": false,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o17",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "decline",
+       "ambiguous"
+      ],
+      "got": "ambiguous",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o18",
+      "tags": [
+       "pt"
+      ],
+      "expected": [
+       "decline"
+      ],
+      "got": "ambiguous",
+      "ok": false,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o19",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "decline"
+      ],
+      "got": "decline",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o20",
+      "tags": [
+       "easy"
+      ],
+      "expected": [
+       "reschedule_request"
+      ],
+      "got": "reschedule_request",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o21",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "reschedule_request"
+      ],
+      "got": "reschedule_request",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o22",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "reschedule_request"
+      ],
+      "got": "reschedule_request",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o23",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "reschedule_request"
+      ],
+      "got": "question",
+      "ok": false,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o24",
+      "tags": [
+       "tricky",
+       "conditional"
+      ],
+      "expected": [
+       "reschedule_request",
+       "ambiguous"
+      ],
+      "got": "ambiguous",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o25",
+      "tags": [
+       "pt"
+      ],
+      "expected": [
+       "reschedule_request"
+      ],
+      "got": "question",
+      "ok": false,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o26",
+      "tags": [
+       "easy"
+      ],
+      "expected": [
+       "question"
+      ],
+      "got": "question",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o27",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "question"
+      ],
+      "got": "question",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o28",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "question"
+      ],
+      "got": "question",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o29",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "question"
+      ],
+      "got": "question",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o30",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "question"
+      ],
+      "got": "question",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o31",
+      "tags": [
+       "easy"
+      ],
+      "expected": [
+       "ambiguous"
+      ],
+      "got": "ambiguous",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o32",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "ambiguous"
+      ],
+      "got": "ambiguous",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o33",
+      "tags": [
+       "tricky"
+      ],
+      "expected": [
+       "ambiguous"
+      ],
+      "got": "ambiguous",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o34",
+      "tags": [
+       "tricky"
+      ],
+      "expected": [
+       "ambiguous",
+       "accept"
+      ],
+      "got": "ambiguous",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o35",
+      "tags": [
+       "tricky"
+      ],
+      "expected": [
+       "ambiguous",
+       "accept"
+      ],
+      "got": "accept",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o36",
+      "tags": [
+       "tricky"
+      ],
+      "expected": [
+       "ambiguous"
+      ],
+      "got": "accept",
+      "ok": false,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o37",
+      "tags": [
+       "tricky"
+      ],
+      "expected": [
+       "ambiguous"
+      ],
+      "got": "ambiguous",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o38",
+      "tags": [
+       "tricky"
+      ],
+      "expected": [
+       "ambiguous",
+       "question"
+      ],
+      "got": "question",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o39",
+      "tags": [
+       "tricky",
+       "conditional"
+      ],
+      "expected": [
+       "ambiguous"
+      ],
+      "got": "ambiguous",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o40",
+      "tags": [
+       "tricky"
+      ],
+      "expected": [
+       "ambiguous",
+       "decline"
+      ],
+      "got": "ambiguous",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o41",
+      "tags": [
+       "tricky"
+      ],
+      "expected": [
+       "decline",
+       "ambiguous"
+      ],
+      "got": "accept",
+      "ok": false,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o42",
+      "tags": [
+       "tricky",
+       "conditional"
+      ],
+      "expected": [
+       "ambiguous",
+       "clinical_concern"
+      ],
+      "got": "clinical_concern",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "pre_classifier",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o43",
+      "tags": [
+       "easy"
+      ],
+      "expected": [
+       "already_booked"
+      ],
+      "got": "already_booked",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o44",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "already_booked"
+      ],
+      "got": "ambiguous",
+      "ok": false,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o45",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "already_booked",
+       "decline"
+      ],
+      "got": "decline",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o46",
+      "tags": [
+       "easy"
+      ],
+      "expected": [
+       "human_request"
+      ],
+      "got": "human_request",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "pre_classifier",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o47",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "human_request"
+      ],
+      "got": "human_request",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "pre_classifier",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o48",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "human_request"
+      ],
+      "got": "human_request",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "pre_classifier",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o49",
+      "tags": [
+       "pt"
+      ],
+      "expected": [
+       "human_request"
+      ],
+      "got": "question",
+      "ok": false,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o50",
+      "tags": [
+       "easy"
+      ],
+      "expected": [
+       "clinical_concern"
+      ],
+      "got": "clinical_concern",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "pre_classifier",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o51",
+      "tags": [
+       "tricky",
+       "hidden_clinical"
+      ],
+      "expected": [
+       "clinical_concern"
+      ],
+      "got": "clinical_concern",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "pre_classifier",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o52",
+      "tags": [
+       "tricky",
+       "hidden_clinical"
+      ],
+      "expected": [
+       "clinical_concern"
+      ],
+      "got": "clinical_concern",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "pre_classifier",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o53",
+      "tags": [
+       "tricky",
+       "hidden_clinical"
+      ],
+      "expected": [
+       "clinical_concern"
+      ],
+      "got": "accept",
+      "ok": false,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o54",
+      "tags": [
+       "pt"
+      ],
+      "expected": [
+       "clinical_concern"
+      ],
+      "got": "ambiguous",
+      "ok": false,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o55",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "clinical_concern"
+      ],
+      "got": "clinical_concern",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "pre_classifier",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o56",
+      "tags": [
+       "easy"
+      ],
+      "expected": [
+       "opt_out"
+      ],
+      "got": "opt_out",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o57",
+      "tags": [
+       "easy"
+      ],
+      "expected": [
+       "opt_out"
+      ],
+      "got": "opt_out",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o58",
+      "tags": [
+       "natural"
+      ],
+      "expected": [
+       "opt_out"
+      ],
+      "got": "opt_out",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o59",
+      "tags": [
+       "adversarial"
+      ],
+      "expected": [
+       "ambiguous"
+      ],
+      "got": "ambiguous",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o60",
+      "tags": [
+       "adversarial"
+      ],
+      "expected": [
+       "ambiguous"
+      ],
+      "got": "ambiguous",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o61",
+      "tags": [
+       "adversarial"
+      ],
+      "expected": [
+       "accept",
+       "ambiguous"
+      ],
+      "got": "accept",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o62",
+      "tags": [
+       "adversarial"
+      ],
+      "expected": [
+       "ambiguous",
+       "decline"
+      ],
+      "got": "ambiguous",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o63",
+      "tags": [
+       "adversarial"
+      ],
+      "expected": [
+       "ambiguous"
+      ],
+      "got": "ambiguous",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     },
+     {
+      "id": "o64",
+      "tags": [
+       "adversarial"
+      ],
+      "expected": [
+       "ambiguous"
+      ],
+      "got": "ambiguous",
+      "ok": true,
+      "ms": 0,
+      "decidedBy": "llm",
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "jev": null
+     }
+    ]
+   }
+  ],
+  "confirm": [
+   {
+    "arm": "rules",
+    "n": 35,
+    "accuracy": 0.771,
+    "falseConfirm": {
+     "count": 4,
+     "of": 20
+    },
+    "confirmRecall": 0.733,
+    "latencyMs": {
+     "p50": 0,
+     "p95": 0
+    },
+    "costPer1kUsd": 0,
+    "rows": [
+     {
+      "id": "c01",
+      "tags": [
+       "easy"
+      ],
+      "expected": "confirm",
+      "got": "confirm",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c02",
+      "tags": [
+       "easy"
+      ],
+      "expected": "confirm",
+      "got": "confirm",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c03",
+      "tags": [
+       "easy"
+      ],
+      "expected": "confirm",
+      "got": "confirm",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c04",
+      "tags": [
+       "easy"
+      ],
+      "expected": "confirm",
+      "got": "confirm",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c05",
+      "tags": [
+       "easy"
+      ],
+      "expected": "confirm",
+      "got": "confirm",
+      "ok": true,
+      "ms": 1,
+      "tokens": 0
+     },
+     {
+      "id": "c06",
+      "tags": [
+       "easy"
+      ],
+      "expected": "confirm",
+      "got": "confirm",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c07",
+      "tags": [
+       "natural"
+      ],
+      "expected": "confirm",
+      "got": "unclear",
+      "ok": false,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c08",
+      "tags": [
+       "natural"
+      ],
+      "expected": "confirm",
+      "got": "confirm",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c09",
+      "tags": [
+       "natural"
+      ],
+      "expected": "confirm",
+      "got": "confirm",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c10",
+      "tags": [
+       "pt"
+      ],
+      "expected": "confirm",
+      "got": "confirm",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c11",
+      "tags": [
+       "pt",
+       "slang"
+      ],
+      "expected": "confirm",
+      "got": "unclear",
+      "ok": false,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c12",
+      "tags": [
+       "pt",
+       "slang"
+      ],
+      "expected": "confirm",
+      "got": "unclear",
+      "ok": false,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c13",
+      "tags": [
+       "es"
+      ],
+      "expected": "confirm",
+      "got": "unclear",
+      "ok": false,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c14",
+      "tags": [
+       "natural"
+      ],
+      "expected": "confirm",
+      "got": "confirm",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c15",
+      "tags": [
+       "natural"
+      ],
+      "expected": "confirm",
+      "got": "confirm",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c16",
+      "tags": [
+       "easy"
+      ],
+      "expected": "decline",
+      "got": "decline",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c17",
+      "tags": [
+       "easy"
+      ],
+      "expected": "decline",
+      "got": "decline",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c18",
+      "tags": [
+       "natural"
+      ],
+      "expected": "decline",
+      "got": "decline",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c19",
+      "tags": [
+       "natural"
+      ],
+      "expected": "decline",
+      "got": "decline",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c20",
+      "tags": [
+       "pt"
+      ],
+      "expected": "decline",
+      "got": "decline",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c21",
+      "tags": [
+       "natural"
+      ],
+      "expected": "decline",
+      "got": "decline",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c22",
+      "tags": [
+       "natural"
+      ],
+      "expected": "decline",
+      "got": "decline",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c23",
+      "tags": [
+       "tricky"
+      ],
+      "expected": "unclear",
+      "got": "unclear",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c24",
+      "tags": [
+       "tricky"
+      ],
+      "expected": "unclear",
+      "got": "unclear",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c25",
+      "tags": [
+       "tricky"
+      ],
+      "expected": "unclear",
+      "got": "unclear",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c26",
+      "tags": [
+       "tricky"
+      ],
+      "expected": "unclear",
+      "got": "unclear",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c27",
+      "tags": [
+       "tricky"
+      ],
+      "expected": "unclear",
+      "got": "unclear",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c28",
+      "tags": [
+       "tricky"
+      ],
+      "expected": "unclear",
+      "got": "unclear",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c29",
+      "tags": [
+       "tricky",
+       "conditional"
+      ],
+      "expected": "unclear",
+      "got": "confirm",
+      "ok": false,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c30",
+      "tags": [
+       "tricky",
+       "conditional"
+      ],
+      "expected": "unclear",
+      "got": "confirm",
+      "ok": false,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c31",
+      "tags": [
+       "tricky"
+      ],
+      "expected": "unclear",
+      "got": "unclear",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c32",
+      "tags": [
+       "tricky"
+      ],
+      "expected": "unclear",
+      "got": "unclear",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c33",
+      "tags": [
+       "adversarial"
+      ],
+      "expected": "unclear",
+      "got": "unclear",
+      "ok": true,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c34",
+      "tags": [
+       "adversarial"
+      ],
+      "expected": "unclear",
+      "got": "confirm",
+      "ok": false,
+      "ms": 0,
+      "tokens": 0
+     },
+     {
+      "id": "c35",
+      "tags": [
+       "adversarial"
+      ],
+      "expected": "unclear",
+      "got": "confirm",
+      "ok": false,
+      "ms": 0,
+      "tokens": 0
+     }
+    ]
+   }
+  ]
+ },
+ "skipped": []
+}

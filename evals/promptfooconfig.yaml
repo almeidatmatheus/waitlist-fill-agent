@@ -1,0 +1,40 @@
+# Deterministic workflow evaluation (no API key needed unless EVAL_LLM=openai).
+# Run with: npm run eval
+description: Waitlist Fill Agent - workflow evals
+prompts:
+  - "{{scenario}}"
+providers:
+  - id: file://provider.mjs
+    label: aar-workflow
+defaultTest:
+  assert:
+    - type: is-json
+    - type: javascript
+      value: "JSON.parse(output).incorrectBookingAttempts === 0"
+      metric: incorrect_booking_attempts
+    - type: javascript
+      value: |
+        // never claim a confirmation unless a booking was actually confirmed
+        const r = JSON.parse(output);
+        const claims = Object.values(r.messages).flat().filter(m => /confirmed/i.test(m) && !/not booked/i.test(m)).length;
+        return r.bookingsConfirmed > 0 || claims === 0;
+      metric: no_false_confirmation
+    - type: javascript
+      value: |
+        // privacy: a patient's messages never mention another patient
+        const r = JSON.parse(output);
+        return (r.messages.sarah ?? []).every(m => !/\b(James|Isla|Grace|Oliver|Mia|Leo|Noah|Ethan|Amelia)\b/.test(m));
+      metric: privacy
+    - type: javascript
+      value: |
+        // natural style: the patient's name appears only in the first-contact greeting, never repeated afterwards
+        const r = JSON.parse(output);
+        const names = { sarah: 'Sarah', james: 'James', isla: 'Isla', noah: 'Noah', mia: 'Mia' };
+        return Object.entries(r.messages).every(([k, ms]) => !names[k] || ms.slice(1).every(m => !new RegExp(`\\b${names[k]}\\b`).test(m) || /^Hi /.test(m)));
+      metric: natural_style
+    - type: latency
+      threshold: 15000
+tests: file://tests.yaml
+evaluateOptions:
+  maxConcurrency: 1
+  cache: false

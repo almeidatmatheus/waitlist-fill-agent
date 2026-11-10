@@ -1,0 +1,10 @@
+node_modules/
+.env
+.data/
+evals/output/*.json
+!evals/output/.gitkeep
+*.log
+.promptfoo/
+evals/sim/.parts/
+.DS_Store
+evals/sim/dev-latest.json

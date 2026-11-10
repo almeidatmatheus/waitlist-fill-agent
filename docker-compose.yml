@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: aar-postgres
+    environment:
+      POSTGRES_USER: aar
+      POSTGRES_PASSWORD: aar_dev_password
+      POSTGRES_DB: aar
+    ports:
+      # Loopback only: the development password below is public, so the database must not be reachable from the network.
+      - "127.0.0.1:${POSTGRES_HOST_PORT:-5433}:5432"
+    volumes:
+      - aar-pgdata:/var/lib/postgresql/data
+      - ./docker/init-test-db.sql:/docker-entrypoint-initdb.d/10-test-db.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aar -d aar"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  aar-pgdata:

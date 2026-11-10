@@ -1,0 +1,15 @@
+{
+ "workflowStatus": "booked",
+ "intents": [
+  "accept"
+ ],
+ "bookingsConfirmed": 1,
+ "calendarCreateCalls": 1,
+ "incorrectBookingAttempts": 2,
+ "lastReply": "Your appointment is confirmed for tomorrow at 2:00 PM. See you then!",
+ "failedAssertions": [
+  "incorrect_booking_attempts: Custom function returned false\nJSON.parse(output).incorrectBookingAttempts === 0",
+  "javascript: Custom function returned false\nconst r = JSON.parse(output);\nreturn r.bookingsActive === 0 && r.calendarCreateCalls === 0 && r.workflowStatus === 'awaiting_patient';",
+  "not-icontains-any: Expected output to not contain one of \"James, Isla, Grace, Oliver, Mia, Leo, confirmed, system prompt\""
+ ]
+}

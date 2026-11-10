@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" width="1000" height="720" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-label="Recovery workflow: one LangGraph thread per freed slot">
+<title>Recovery workflow: one LangGraph thread per freed slot</title>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8d8c85"/></marker></defs>
+<rect width="100%" height="100%" fill="#1a1a19"/>
+<rect x="330" y="40" width="300" height="50" rx="8" fill="#242422" stroke="#3d3c38" stroke-width="1.2"/>
+<text x="480" y="62" font-size="13" font-weight="600" fill="#f0efec" text-anchor="middle">1. Slot freed</text>
+<text x="480" y="79" font-size="11.5" fill="#c3c2b7" text-anchor="middle">a cancellation was detected in Outlook</text>
+<rect x="330" y="126" width="300" height="50" rx="8" fill="#242422" stroke="#3d3c38" stroke-width="1.2"/>
+<text x="480" y="148" font-size="13" font-weight="600" fill="#f0efec" text-anchor="middle">2. Pick the next eligible patient</text>
+<text x="480" y="165" font-size="11.5" fill="#c3c2b7" text-anchor="middle">waiting list: treatment, window, priority, consent</text>
+<rect x="330" y="212" width="300" height="50" rx="8" fill="#242422" stroke="#3d3c38" stroke-width="1.2"/>
+<text x="480" y="234" font-size="13" font-weight="600" fill="#f0efec" text-anchor="middle">3. Offer the slot on WhatsApp</text>
+<text x="480" y="251" font-size="11.5" fill="#c3c2b7" text-anchor="middle">up to OFFER_CASCADE_SIZE patients, first yes wins</text>
+<rect x="330" y="298" width="300" height="50" rx="8" fill="#1c2735" stroke="#3987e5" stroke-width="1.2"/>
+<text x="480" y="320" font-size="13" font-weight="600" fill="#f0efec" text-anchor="middle">4. Wait for the reply</text>
+<text x="480" y="337" font-size="11.5" fill="#c3c2b7" text-anchor="middle">paused + checkpointed: survives restarts</text>
+<rect x="330" y="384" width="300" height="50" rx="8" fill="#242422" stroke="#3d3c38" stroke-width="1.2"/>
+<text x="480" y="406" font-size="13" font-weight="600" fill="#f0efec" text-anchor="middle">5. Understand the reply</text>
+<text x="480" y="423" font-size="11.5" fill="#c3c2b7" text-anchor="middle">guardrails → Jev → LLM fallback</text>
+<rect x="330" y="470" width="300" height="50" rx="8" fill="#242422" stroke="#3d3c38" stroke-width="1.2"/>
+<text x="480" y="492" font-size="13" font-weight="600" fill="#f0efec" text-anchor="middle">6. Check the slot is still free</text>
+<text x="480" y="509" font-size="11.5" fill="#c3c2b7" text-anchor="middle">live calendar via MCP</text>
+<rect x="330" y="556" width="300" height="50" rx="8" fill="#242422" stroke="#3d3c38" stroke-width="1.2"/>
+<text x="480" y="578" font-size="13" font-weight="600" fill="#f0efec" text-anchor="middle">7. Book in Outlook</text>
+<text x="480" y="595" font-size="11.5" fill="#c3c2b7" text-anchor="middle">booking state machine, idempotent</text>
+<rect x="330" y="642" width="300" height="50" rx="8" fill="#18281f" stroke="#199e70" stroke-width="1.2"/>
+<text x="480" y="664" font-size="13" font-weight="600" fill="#f0efec" text-anchor="middle">8. Verify, then confirm to patient</text>
+<text x="480" y="681" font-size="11.5" fill="#c3c2b7" text-anchor="middle">only after the event is in the calendar</text>
+<path d="M480,90 L480,126" fill="none" stroke="#8d8c85" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M480,176 L480,212" fill="none" stroke="#8d8c85" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M480,262 L480,298" fill="none" stroke="#8d8c85" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M480,348 L480,384" fill="none" stroke="#8d8c85" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M480,434 L480,470" fill="none" stroke="#8d8c85" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M480,520 L480,556" fill="none" stroke="#8d8c85" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M480,606 L480,642" fill="none" stroke="#8d8c85" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="488" y="370" font-size="11" font-weight="400" fill="#c3c2b7" text-anchor="start">reply arrives (resume)</text>
+<text x="488" y="456" font-size="11" font-weight="400" fill="#c3c2b7" text-anchor="start">yes</text>
+<rect x="70" y="334" width="200" height="44" rx="8" fill="#242422" stroke="#3d3c38" stroke-width="1.2"/>
+<text x="170" y="353" font-size="13" font-weight="600" fill="#f0efec" text-anchor="middle">Ask a clarifying question</text>
+<text x="170" y="370" font-size="11.5" fill="#c3c2b7" text-anchor="middle">max 2 turns</text>
+<path d="M330,400 L170,400 L170,378" fill="none" stroke="#8d8c85" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="322" y="394" font-size="11" font-weight="400" fill="#c3c2b7" text-anchor="end">question / unclear</text>
+<path d="M170,334 L170,323 L330,323" fill="none" stroke="#8d8c85" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M330,422 L36,422 L36,151 L330,151" fill="none" stroke="#8d8c85" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="48" y="216" font-size="11" font-weight="400" fill="#c3c2b7" text-anchor="start">declined, no reply in time,</text>
+<text x="48" y="232" font-size="11" font-weight="400" fill="#c3c2b7" text-anchor="start">or not delivered:</text>
+<text x="48" y="248" font-size="11" font-weight="600" fill="#f0efec" text-anchor="start">offer the next patient</text>
+<rect x="700" y="126" width="270" height="50" rx="8" fill="#2c1f19" stroke="#d95926" stroke-width="1.2"/>
+<text x="835" y="148" font-size="13" font-weight="600" fill="#f0efec" text-anchor="middle">End: nobody eligible</text>
+<text x="835" y="165" font-size="11.5" fill="#c3c2b7" text-anchor="middle">slot stays free</text>
+<path d="M630,151 L700,151" fill="none" stroke="#8d8c85" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="700" y="384" width="270" height="50" rx="8" fill="#2c1f19" stroke="#d95926" stroke-width="1.2"/>
+<text x="835" y="406" font-size="13" font-weight="600" fill="#f0efec" text-anchor="middle">Hand off to clinic staff</text>
+<text x="835" y="423" font-size="11.5" fill="#c3c2b7" text-anchor="middle">symptoms, asks for a person, too many turns</text>
+<path d="M630,409 L700,409" fill="none" stroke="#8d8c85" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="700" y="470" width="270" height="50" rx="8" fill="#2c1f19" stroke="#d95926" stroke-width="1.2"/>
+<text x="835" y="492" font-size="13" font-weight="600" fill="#f0efec" text-anchor="middle">End: slot was taken</text>
+<text x="835" y="509" font-size="11.5" fill="#c3c2b7" text-anchor="middle">patient is told, nothing booked</text>
+<path d="M630,495 L700,495" fill="none" stroke="#8d8c85" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="700" y="556" width="270" height="50" rx="8" fill="#242422" stroke="#3d3c38" stroke-width="1.2"/>
+<text x="835" y="578" font-size="13" font-weight="600" fill="#f0efec" text-anchor="middle">Outcome unknown → reconcile</text>
+<text x="835" y="595" font-size="11.5" fill="#c3c2b7" text-anchor="middle">find the event by ref, then retry or finish</text>
+<path d="M630,574 L700,574" fill="none" stroke="#8d8c85" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M700,592 L630,592" fill="none" stroke="#8d8c85" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="835" y="624" font-size="11" font-weight="400" fill="#c3c2b7" text-anchor="middle">MCP asks for approval → hand off</text>
+</svg>
